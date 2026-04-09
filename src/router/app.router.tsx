@@ -1,6 +1,7 @@
 import { createBrowserRouter, type RouteObject } from "react-router-dom";
 import QuranPage from "../components/QuranPage";
 import SuratDetail from "../components/SuratDetail";
+import TafsirPage from "../components/TafsirPage";
 
 const routes: RouteObject[] = [
   {
@@ -10,6 +11,14 @@ const routes: RouteObject[] = [
   {
     path: "/surat/:id",
     element: <SuratDetail />,
+  },
+  {
+    path: "/tafsir/:id/:ayatId",
+    element: <TafsirPage />,
+  },
+  {
+    path: "/tafsir/:id",
+    element: <TafsirPage />,
   },
 ];
 

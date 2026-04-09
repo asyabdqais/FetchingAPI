@@ -21,7 +21,7 @@ interface SuratData {
 export default function SuratDetail() {
   const { id } = useParams();
   const [data, setData] = useState<SuratData | null>(null);
-  const [qari, setQari] = useState("05");
+  const [qari, setQari] = useState<string>("05");
 
   const [error, setError] = useState<string | null>(null);
 
@@ -77,8 +77,8 @@ export default function SuratDetail() {
 
           <div className="mt-6 flex flex-col items-center gap-3">
             <select
-              value={qari}
-              onChange={(e) => setQari(e.target.value)}
+             value = {qari}
+             onChange={(e) => setQari(e.target.value)}
               className="px-4 py-2 bg-teal-50 border border-teal-200 rounded-lg text-teal-800 font-medium outline-none"
             >
               <option value="01">Abdullah Al-Juhany</option>
@@ -112,9 +112,17 @@ export default function SuratDetail() {
               <p className="text-teal-700 italic font-medium mb-1">
                 {a.teksLatin}
               </p>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 {a.teksIndonesia}
               </p>
+              <div className="flex justify-end mt-4">
+                <Link
+                  to={`/tafsir/${id}/${a.nomorAyat}`}
+                  className="inline-block bg-teal-100 hover:bg-teal-200 text-teal-800 font-semibold py-2 px-4 rounded-lg text-sm transition-colors duration-200 shadow-sm"
+                >
+                  Lihat Tafsir Ayat {a.nomorAyat}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
