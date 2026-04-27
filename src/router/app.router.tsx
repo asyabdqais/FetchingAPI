@@ -1,10 +1,12 @@
-import { createBrowserRouter, type RouteObject } from "react-router-dom";
+import { createBrowserRouter,  } from "react-router-dom";
 import QuranPage from "../components/QuranPage";
 import SuratDetail from "../components/SuratDetail";
 import TafsirPage from "../components/TafsirPage";
+import Doa from "../components/Doa";
 
-const routes: RouteObject[] = [
-  {
+
+
+const router = createBrowserRouter([ {
     path: "/",
     element: <QuranPage />,
   },
@@ -17,11 +19,11 @@ const routes: RouteObject[] = [
     element: <TafsirPage />,
   },
   {
-    path: "/tafsir/:id",
-    element: <TafsirPage />,
+    path: "/Doa",
+    element: <Doa />,
   },
-];
 
-const appRouter = createBrowserRouter(routes);
 
-export default appRouter;
+  ]);
+
+export default router;
